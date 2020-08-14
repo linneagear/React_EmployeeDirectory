@@ -16,11 +16,13 @@ class Form extends Component {
     });
   };
 
+// when searched, filter through for what was searched. If false, return "could not find"
+// when carrot button is clicked, sort through
+
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
     
-
     this.setState({
       firstName: "",
       lastName: "",
@@ -39,7 +41,7 @@ class Form extends Component {
             onChange={this.handleInputChange}
             type="text"
           />
-          {/* <button onClick={this.handleFormSubmit}>Submit</button> */}
+          <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
       </div>
     );

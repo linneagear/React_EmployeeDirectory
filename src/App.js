@@ -16,8 +16,9 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
+      
         <Title>Employee Directory</Title>
-        <Form />
+          <Form />
         {this.state.employees.map(employee => (
           <EmployeeCard
             id={employee.id}
@@ -29,6 +30,7 @@ class App extends Component {
           />
         ))}
       </Wrapper>
+    
     );
   }
 }
