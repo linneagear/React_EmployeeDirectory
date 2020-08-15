@@ -12,8 +12,9 @@ class App extends Component {
     super();
 
     // set initial state to an empty string
-    this.state = {
-      search: ""
+    this.state = { 
+      employees: [], 
+      search: '' 
     };
   }
 
@@ -23,13 +24,9 @@ class App extends Component {
     this.setState({ search: keyword })
   }
 
+
   render() {
 
-    const styleInfo = {
-      marginLeft:'40%',
-      marginTop: 60
-    }
-  
     // filter employees data based on the search variable which includes what is in this.state.search
     const items = employees.filter((data) => {
       if (this.state.search == null)
@@ -58,11 +55,12 @@ class App extends Component {
 
     return (
       <div>
-      <Title>Employee Directory</Title>
-        <input style={styleInfo} type="text" placeholder="Enter item to be searched" onChange={(e) => this.searchSpace(e)} />
+        <Title>Employee Directory</Title>
+        <div>
+          <Sort />
+        </div>
+        <input type="text" placeholder="Enter item to be searched" onChange={(e) => this.searchSpace(e)} />
         {items}
-
-        <Sort></Sort>
       </div>
     )
   }
