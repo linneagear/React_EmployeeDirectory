@@ -2,6 +2,8 @@
 import React, { Component } from "react";
 import EmployeeCard from "./components/EmployeeCard";
 import Wrapper from "./components/Wrapper";
+import Title from "./components/Title"
+import Sort from "./components/Sort"
 import employees from "./employees.json";
 
 class App extends Component {
@@ -9,7 +11,7 @@ class App extends Component {
   constructor() {
     super();
 
-    // set initial search to an empty string
+    // set initial state to an empty string
     this.state = {
       search: ""
     };
@@ -21,13 +23,14 @@ class App extends Component {
     this.setState({ search: keyword })
   }
 
-
   render() {
-    const styleInfo = {
-      paddingRight: '10px'
-    }
 
-    // filter data based on the search variable which includes what is in this.state.search
+    const styleInfo = {
+      marginLeft:'40%',
+      marginTop: 60
+    }
+  
+    // filter employees data based on the search variable which includes what is in this.state.search
     const items = employees.filter((data) => {
       if (this.state.search == null)
         return data
@@ -55,8 +58,11 @@ class App extends Component {
 
     return (
       <div>
-        <input type="text" placeholder="Enter item to be searched" onChange={(e) => this.searchSpace(e)} />
+      <Title>Employee Directory</Title>
+        <input style={styleInfo} type="text" placeholder="Enter item to be searched" onChange={(e) => this.searchSpace(e)} />
         {items}
+
+        <Sort></Sort>
       </div>
     )
   }
