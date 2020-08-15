@@ -6,15 +6,16 @@ import Title from "./components/Title"
 import Sort from "./components/Sort"
 import employees from "./employees.json";
 
+
 class App extends Component {
 
   constructor() {
     super();
 
     // set initial state to an empty string
-    this.state = { 
-      employees: [], 
-      search: '' 
+    this.state = {
+      employees: [],
+      search: ''
     };
   }
 
@@ -23,7 +24,6 @@ class App extends Component {
     let keyword = event.target.value;
     this.setState({ search: keyword })
   }
-
 
   render() {
 
@@ -57,9 +57,15 @@ class App extends Component {
       <div>
         <Title>Employee Directory</Title>
         <div>
-          <Sort />
+          <Wrapper>
+            <Sort />
+          </Wrapper>
         </div>
-        <input type="text" placeholder="Enter item to be searched" onChange={(e) => this.searchSpace(e)} />
+
+        {/* Sort and search are in two separate spaces */}
+        <div class="search">
+          <input type="text" placeholder="Enter item to be searched" onChange={(e) => this.searchSpace(e)} />
+        </div>
         {items}
       </div>
     )

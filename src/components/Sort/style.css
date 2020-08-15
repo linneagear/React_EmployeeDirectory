@@ -1,0 +1,13 @@
+img {
+    max-width: 130px;
+    padding: 5px;
+}
+
+.row {
+    display: flex;
+}
+
+.sortStyle {
+    text-align: center;
+    width: 100%;
+}

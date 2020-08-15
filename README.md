@@ -2,6 +2,8 @@
 
 ## Overview
 
+
+
 For this assignment, you'll create a employee directory with React. This assignment will require you to break up your application's UI into components, manage component state, and respond to user events.
 
 ## User Story
@@ -22,9 +24,12 @@ The user should be able to:
 
   * Filter the users by at least one property.
 
-## Pseudo code
-Make a single table of employees, like in the spongebob friend activity
-have a button that filters and one that sorts
+## Issues
+This was an extremely interesting activity to work on, and was the most fun I had in all homeworks, however I struggled with the breakdown of the files.
+
+I struggled with passing down props and connecting between components, so I wasn't able to solve how to both filter and sort through the data.
+
+I would change the entire app to be in a table instead, and filter and sort that way.
 
 ## Submission on BCS
 

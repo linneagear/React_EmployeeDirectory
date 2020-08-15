@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import employees from "../../employees.json"
+import "./style.css";
 
 function Sort() {
     const [data, setData] = useState([]);
@@ -19,27 +20,23 @@ function Sort() {
     }, [sortType]);
 
     return (
-        <div>
-            <select onChange={(e) => setSortType(e.target.value)}>
+        <div >
+            <select className="sortStyle" onChange={(e) => setSortType(e.target.value)}>
                 <option value="number">Phone Number</option>
-                {/* name not functional right now */}
                 <option value="name">Original List</option>
             </select>
             {data.map(props => (
-                <div key={props.id} style={{ margin: '30px' }}>
-                    <div className="row">
-                        <div className="img-container">
-                            <img alt={props.name} src={props.image} />
-                        </div>
-                        <ul>
-                            <li><strong>Name:</strong> {props.name}</li>
-                            <li><strong>Occupation:</strong> {props.occupation}</li>
-                            <li><strong>Location:</strong> {props.location}</li>
-                            <li><strong>Phone Number:</strong> {props.number}</li>
-                        </ul>
+                <div className="row">
+                    <div className="img-container">
+                        <img alt={props.name} src={props.image} />
                     </div>
+                    <ul>
+                        <li><strong>Name:</strong> {props.name}</li>
+                        <li><strong>Occupation:</strong> {props.occupation}</li>
+                        <li><strong>Location:</strong> {props.location}</li>
+                        <li><strong>Phone Number:</strong> {props.number}</li>
+                    </ul>
                 </div>
-                
             ))}
         </div>
     )
