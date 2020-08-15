@@ -4,34 +4,45 @@ import employees from "../../employees.json"
 function Sort() {
     const [data, setData] = useState([]);
     const [sortType, setSortType] = useState('number');
-  
+
     useEffect(() => {
-      const sortArray = type => {
-        const types = {
-          number: "number"
+        const sortArray = type => {
+            const types = {
+                number: "number"
+            };
+            const sortProperty = types[type];
+            const sorted = [...employees].sort((a, b) => b[sortProperty] - a[sortProperty]);
+            setData(sorted);
         };
-        const sortProperty = types[type];
-        const sorted = [...employees].sort((a, b) => b[sortProperty] - a[sortProperty]);
-        setData(sorted);
-      };
-  
-      sortArray(sortType);
-    }, [sortType]); 
-  
+
+        sortArray(sortType);
+    }, [sortType]);
+
     return (
-      <div>
-        <select onChange={(e) => setSortType(e.target.value)}> 
-        <option value="number">Phone Number</option>
-        <option value="name">Name</option>
-      </select>
-      {data.map(employee => (
-        <div key={employee.id} style={{ margin: '30px' }}>
-          <div>{`Number: ${employee.number}`}</div>
-          <div>{`Name: ${employee.name}`}</div>
+        <div>
+            <select onChange={(e) => setSortType(e.target.value)}>
+                <option value="number">Phone Number</option>
+                {/* name not functional right now */}
+                <option value="name">Original List</option>
+            </select>
+            {data.map(props => (
+                <div key={props.id} style={{ margin: '30px' }}>
+                    <div className="row">
+                        <div className="img-container">
+                            <img alt={props.name} src={props.image} />
+                        </div>
+                        <ul>
+                            <li><strong>Name:</strong> {props.name}</li>
+                            <li><strong>Occupation:</strong> {props.occupation}</li>
+                            <li><strong>Location:</strong> {props.location}</li>
+                            <li><strong>Phone Number:</strong> {props.number}</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            ))}
         </div>
-      ))}
-      </div>
-    );
-  }
+    )
+}
 
 export default Sort;
