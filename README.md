@@ -40,7 +40,7 @@ Or scroll down to enter a search value:
 
 
 ## Issues
-This was an extremely interesting activity to work on, and was the most fun I had in all homeworks, however I struggled with passing down props and connecting between components, so I wasn't able to solve how to both filter AND sort through the data.
+This was an extremely interesting activity to work on, and was the most fun I had in all homeworks, however I struggled with passing down props and connecting between components, so I wasn't able to solve how to both filter AND sort through the data in the same instance, so instead the app has two separate tables to do each of these functions.
 
 I would change the entire app to be in a table instead, and filter and sort that way.
 
