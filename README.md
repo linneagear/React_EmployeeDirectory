@@ -38,7 +38,6 @@ User is given a set of employees that they are then able to sort by phone number
 Or scroll down to enter a search value:
 ![Search Option](./public/images/search.JPG)
 
-
 ## Issues
 This was an extremely interesting activity to work on, and was the most fun I had in all homeworks, however I struggled with passing down props and connecting between components, so I wasn't able to solve how to both filter AND sort through the data.
 
