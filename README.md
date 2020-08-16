@@ -28,7 +28,7 @@ Run `npm install` first, then `npm start` to run the app in the development mode
 
 The page will reload if you make edits.
 
-Find deployed link [here]().
+Find deployed link [here](https://linneagear.github.io/React_EmployeeDirectory/).
 
 ## Usage
 
